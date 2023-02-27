@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+       while (true){
+           System.out.println("1.Celsius to Fahrenheit \n2.Celsius to Kelvin \n3.Fahrenheit to Celsius \n4.Fahrenheit to Kelvin \n5.Kelvin to Fahrenheit \n6.Kelvin to Celsius");
+           System.out.print("Enter your choice:");
+           Scanner input = new Scanner(System.in);
+           int choice = input.nextInt();
+
+           switch (choice){
+               case 1 -> celsiusToFahrenheit();
+               case 2 -> celsiusToKelvin();
+               case 3 -> fahrenheitToCelsius();
+               case 4 -> fahrenheitToKelvin();
+               case 5 -> kelvinToCelsius();
+               case 6 -> kelvinToFahrenheit();
+               default -> System.out.println("Enter a valid choice.");
+           }
+       }
+    }
+    static void celsiusToFahrenheit(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in celsius:");
+        double celsius = input.nextDouble();
+        double fahrenheit = ((celsius * 9) / 5) + 32;
+        System.out.println("Celsius = "+celsius+" -> Fahrenheit = "+fahrenheit);
+    }
+    static void celsiusToKelvin(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in celsius:");
+        double celsius = input.nextDouble();
+        double kelvin = celsius + 273;
+        System.out.println("Celsius = "+celsius+" -> Kelvin = "+kelvin);
+    }
+    static void fahrenheitToCelsius(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in fahrenheit:");
+        double fahrenheit = input.nextDouble();
+        double celsius = ((fahrenheit - 32) * 5) / 9;
+        System.out.println("Fahrenheit = " + fahrenheit + " -> Celsius = "+celsius);
+    }
+    static void fahrenheitToKelvin(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in fahrenheit:");
+        double fahrenheit = input.nextDouble();
+        double kelvin = (((fahrenheit - 32) * 5) / 9)+273;
+        System.out.println("Fahrenheit = " + fahrenheit + " -> Kelvin = "+kelvin);
+    }
+    static void kelvinToCelsius(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in kelvin:");
+        double kelvin = input.nextDouble();
+        double celsius = kelvin -273;
+        System.out.println("Kelvin = " + kelvin + " -> Celsius = "+celsius);
+    }
+    static void kelvinToFahrenheit(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the temperature in kelvin:");
+        double kelvin = input.nextDouble();
+        double fahrenheit = (((kelvin - 273) * 9) / 5) + 32;
+        System.out.println("Kelvin = " + kelvin + " -> Fahrenheit = "+fahrenheit);
+    }
+}
